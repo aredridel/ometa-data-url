@@ -1,7 +1,18 @@
 ometa DataUrl {
+    scheme = "data:",
+    
+    type = /[a-z-]+/,
+    
+    charset = /[a-z-]+/,
+    
+    mimeType = type "/" type ( ";charset=" charset )?,
+    
+    charset = 
+    dataUrl = scheme mimeType base64? "," data
 }
 
 DataUrl.parse = function (str) {
+    return DataUrl.matchAll(str, 'dataUrl');
 };
 
 module.exports = DataUrl;
