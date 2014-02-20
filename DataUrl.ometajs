@@ -1,0 +1,7 @@
+ometa DataUrl {
+}
+
+DataUrl.parse = function (str) {
+};
+
+module.exports = DataUrl;
