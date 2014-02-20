@@ -1,14 +1,19 @@
 ometa DataUrl {
-    scheme = "data:",
-    
-    type = /[a-z-]+/,
-    
-    charset = /[a-z-]+/,
-    
-    mimeType = type "/" type ( ";charset=" charset )?,
-    
-    charset = 
-    dataUrl = scheme mimeType base64? "," data
+    scheme = seq('data:'),
+
+    type = /[a-z-]+/i,
+
+    charset = /[a-z0-9-]+/i,
+
+    mimeType = type:p '/' type:q ( seq(';charset=') charset:c )? -> ({type: p, subtype: q, charset: c}),
+
+    base64 = seq(';base64'),
+
+    b64data = /[A–Za–z0–9+-]*/:d -> (new Buffer(d, 'base64')).toString() + 'work in progress',
+
+    data = /.*/:d -> decodeURIComponent(d),
+
+    dataUrl = scheme mimeType:m (',' data:d -> d | base64 ',' b64data:x -> x):d -> ({data: d, type: m })
 }
 
 DataUrl.parse = function (str) {
