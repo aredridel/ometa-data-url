@@ -1,21 +1,15 @@
 {
-  "name": "data-url",
-  "version": "0.0.0",
-  "description": "",
+  "name": "ometa-data-url",
+  "version": "1.0.0",
+  "description": "An Ometa parser for data URLs",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "https://gist.github.com/9106354.git"
+    "url": "https://github.com/aredridel/ometa-data-url.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gist.github.com/9106354"
-  },
-  "homepage": "https://gist.github.com/9106354",
+  "author": "Aria Stewart <aredridel@dinhe.net>",
+  "license": "MIT",
+  "homepage": "https://github.com/aredridel/ometa-data-url",
   "dependencies": {
     "ometajs": "~3.3.5"
   }
