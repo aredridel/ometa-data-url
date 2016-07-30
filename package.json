@@ -11,6 +11,6 @@
   "license": "MIT",
   "homepage": "https://github.com/aredridel/ometa-data-url",
   "dependencies": {
-    "ometajs": "~3.3.5"
+    "ometajs": "~4.0.0"
   }
 }
